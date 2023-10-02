@@ -1,0 +1,799 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+:root {
+    --tr3: 0.3s;
+    --main-blue: #21b4f3ad;
+    --main-orange: #ff5722cc;
+    --main-brown: #c7bd9a;
+    --main-silver: #607d8b;
+}
+
+/* start componunts */
+
+
+/* end componunts */
+
+/*  */
+
+.main-holder {
+    width: 100%;
+    height: 100vh;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    overflow-y: hidden;
+    position: relative;
+}
+
+/* lay-out */
+.lay-out {
+    z-index: 999;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.5);
+    display: none;
+}
+
+.lay-out.open {
+    display: block;
+}
+
+/* lay-out */
+
+/* more info page */
+
+.main-holder .more {
+    width: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-color: #555;
+    padding: 20px;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: space-around;
+    display: none;
+}
+
+.main-holder .more.open {
+    display: flex;
+}
+
+.main-holder .more .close {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: var(--main-blue);
+    padding: 2px 8px;
+    border-radius: 0 5px 0 0;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+
+.main-holder .more .left h2 {
+    color: var(--main-blue);
+}
+
+.main-holder .more .left p {
+    color: white;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.main-holder .more .left>span {
+    margin-top: 40px;
+    display: block;
+    width: fit-content;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    position: relative;
+}
+
+.main-holder .more .left>span::before {
+    content: "";
+    width: 40%;
+    height: 3px;
+    display: block;
+    background-color: var(--main-blue);
+    position: absolute;
+    bottom: -5px;
+    left: 2px;
+    border-radius: 0 3px 3px 0;
+}
+
+.main-holder .more .left>span::after {
+    content: "";
+    width: 80%;
+    height: 3px;
+    display: block;
+    background-color: var(--main-blue);
+    position: absolute;
+    bottom: -15px;
+    left: 2px;
+    border-radius: 0 3px 3px 0;
+}
+
+.main-holder .more .right {
+    width: 50%;
+    text-align: center;
+}
+
+.main-holder .more .right .image {
+    width: 200px;
+    height: 200px;
+    border: 1px solid white;
+    margin: 10px auto;
+
+}
+
+.main-holder .more .right .add {
+    display: block;
+    margin: 0 auto 10px;
+    width: 200px;
+    background-color: #333;
+    border: none;
+    padding: 4px;
+    color: white;
+    cursor: pointer;
+}
+
+.main-holder .more .right .buy {
+    width: 200px;
+    padding: 4px;
+    background-color: var(--main-blue);
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* .main-holder .more .right .image.op1 {
+    background: url(../img/modern.jpg);
+    background-size: cover;
+}
+
+.main-holder .more .right .image.op2 {
+    background: url(../img/castak.jpeg);
+    background-size: cover;
+}
+
+.main-holder .more .right .image.op3 {
+    background: url(../img/metal.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center ;
+}
+
+.main-holder .more .right .image.op4 {
+    background: url(../img/trainagl.jpg);
+    background-size: cover;
+} */
+/* more info page */
+/*  */
+/* format sing up */
+
+/* chose sing */
+.chose-sing {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 300px;
+    height: 200px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #333333;
+    padding: 10px 0;
+    border-radius: 5px;
+    border: 1px solid white;
+}
+
+.chose-sing.open {
+    display: flex;
+}
+
+.chose-sing .logo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+
+.chose-sing button {
+    width: 150px;
+    background-color: #222;
+    border: none;
+    padding: 4px 0;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--tr3);
+}
+
+.chose-sing button:hover {
+    border: 1px solid white;
+}
+
+.chose-sing .close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: white;
+    cursor: pointer;
+    transition: var(--tr3);
+}
+
+.chose-sing .close:hover {
+    color: var(--main-blue);
+}
+
+/* log-in-page */
+.log-in-page {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    background-color: #333;
+    padding: 10px;
+    height: 380px;
+    width: 250px;
+    border: 1px solid white;
+    border-radius: 4px;
+    display: none;
+}
+
+.log-in-page.open {
+    display: block;
+}
+
+.log-in-page .close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    color: white;
+    transition: var(--tr3);
+}
+
+.log-in-page .close:hover {
+    color: var(--main-blue);
+}
+
+.log-in-page .logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid white;
+    margin: 10px auto;
+}
+
+.log-in-page h2 {
+    margin: 5px auto 15px;
+    color: white;
+    display: block;
+    text-align: center;
+}
+
+.log-in-page form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.log-in-page form input {
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 7px;
+    color: gainsboro;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.log-in-page form input:focus {
+    outline: none;
+}
+
+.log-in-page form input::placeholder {
+    color: gainsboro;
+}
+
+.log-in-page a {
+    text-decoration: none;
+    margin: 10px 10px 10px 0;
+    display: block;
+    font-size: 12px;
+    color: #dcdcdc9e;
+    position: relative;
+    transition: var(--tr3);
+}
+
+.log-in-page a:hover {
+    color: white;
+    font-size: 15px;
+}
+
+.log-in-page a::first-letter {
+    margin-right: 5px;
+}
+
+/* sin-up-page */
+.sing-up-page {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    background-color: #333;
+    padding: 10px;
+    height: 380px;
+    width: 250px;
+    border: 1px solid white;
+    border-radius: 4px;
+    display: none;
+}
+
+.sing-up-page.open {
+    display: block;
+}
+
+.sing-up-page .close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    color: white;
+    transition: var(--tr3);
+}
+
+.sing-up-page .close:hover {
+    color: var(--main-blue);
+}
+
+.sing-up-page .logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid white;
+    margin: 10px auto;
+}
+
+.sing-up-page h2 {
+    margin: 5px auto 15px;
+    color: white;
+    display: block;
+    text-align: center;
+}
+
+.sing-up-page form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sing-up-page form input {
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 7px;
+    color: gainsboro;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.sing-up-page form input:focus {
+    outline: none;
+}
+
+.sing-up-page form input::placeholder {
+    color: gainsboro;
+}
+
+.sing-up-page a {
+    text-decoration: none;
+    margin: 10px 10px 10px 0;
+    display: block;
+    font-size: 12px;
+    color: #dcdcdc9e;
+    position: relative;
+    transition: var(--tr3);
+}
+
+.sing-up-page a:hover {
+    color: white;
+    font-size: 15px;
+}
+
+.sing-up-page a::first-letter {
+    margin-right: 5px;
+}
+
+/* format sing up */
+.main-holder .left {
+    height: 100%;
+    width: calc(45% + 1px);
+    position: relative;
+}
+
+.main-holder .left .hidding {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    font-size: 18px;
+    z-index: 10;
+}
+
+.main-holder .left .holder {
+    width: 100%;
+    height: 103%;
+    position: relative;
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+}
+
+
+
+.main-holder .left .holder .slide {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    justify-content: flex-end;
+    padding-bottom: 20px;
+    min-width: 100%;
+}
+
+
+.main-holder .left .holder .s1 {
+    background: url(../img/modernH.jpg);
+    background-size: cover;
+}
+
+.main-holder .left .holder .s2 {
+    background: url(../img/castakH.jpg);
+    background-size: cover;
+}
+
+.main-holder .left .holder .s3 {
+    background: url(../img/metalH.jpg);
+    background-size: cover;
+}
+
+.main-holder .left .holder .s4 {
+    background: url(../img/trainaglH.jpg);
+    background-size: cover;
+}
+
+.main-holder .left .holder .slide h1 {
+    color: white;
+    font-size: 40px;
+    margin: 0;
+}
+
+.main-holder .left .holder .slide p {
+    line-height: 1.3;
+    color: white;
+    font-size: 14px;
+    padding-right: 20px;
+}
+
+.main-holder .left .holder .slide>span {
+    color: white;
+    position: relative;
+    width: fit-content;
+}
+
+.main-holder .left .holder .slide>span .st {
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: red;
+    transition: var(--tr3);
+}
+
+/*  */
+.main-holder .mid {
+    width: calc(28% + 1px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-start;
+}
+
+.main-holder .mid .top {
+    width: 100%;
+    height: 45%;
+    overflow-y: hidden;
+}
+
+.main-holder .mid .top .holder {
+    width: 100%;
+    height: 107%;
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+}
+
+.main-holder .mid .top .holder .slide {
+    min-width: 100%;
+    height: 100%;
+    padding: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+.main-holder .mid .top .holder p span {
+    color: var(--main-blue);
+}
+
+/* .main-holder .mid .top .holder .s1 p span {
+    /* color: var(--main-blue);
+} */
+
+/* .main-holder .mid .top .holder .s2 p span {
+    color: var(--main-orange);
+}
+
+.main-holder .mid .top .holder .s3 p span {
+    color: var(--main-silver);
+}
+
+.main-holder .mid .top .holder .s4 p span {
+    color: var(--main-brown);
+}  */
+
+.main-holder .mid .top .holder .slide p {
+    margin: 0;
+}
+
+/* .main-holder .mid .top .holder .slide p span {
+        color: #009688;
+    } */
+
+.main-holder .mid .bottom {
+    width: 100%;
+    height: 55%;
+}
+
+.main-holder .mid .bottom .holder {
+    width: 100%;
+    height: 105%;
+    display: flex;
+    scroll-behavior: smooth;
+    overflow-x: scroll;
+}
+
+.main-holder .mid .bottom .holder .slide {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-self: flex-start;
+    padding: 20px;
+    background-color: var(--main-blue);
+    gap: 20px;
+}
+
+/* .main-holder .mid .bottom .holder .s1 {
+    background-color: var(--main-blue);
+}
+
+.main-holder .mid .bottom .holder .s2 {
+    background-color: var(--main-orange);
+}
+
+.main-holder .mid .bottom .holder .s3 {
+    background-color: var(--main-silver);
+}
+
+.main-holder .mid .bottom .holder .s4 {
+    background-color: var(--main-brown);
+} */
+
+.main-holder .mid .bottom .holder .slide>div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.main-holder .mid .bottom .holder .slide>div>i {
+    font-size: 22px;
+    width: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-holder .mid .bottom .holder .slide>div>span {
+    font-size: 13px;
+}
+
+.main-holder .mid .bottom .holder .slide>button {
+    background-color: #333;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+/* .main-holder .mid .bottom .holder .s1>button {
+    color: var(--main-blue);
+}
+
+.main-holder .mid .bottom .holder .s2>button {
+    color: var(--main-orange);
+}
+
+.main-holder .mid .bottom .holder .s3>button {
+    color: var(--main-silver);
+}
+
+.main-holder .mid .bottom .holder .s4>button {
+    color: var(--main-brown);
+} */
+
+/*  */
+.main-holder .right {
+    width: 27%;
+    height: 100%;
+    position: relative;
+    overflow-y: hidden;
+}
+
+.main-holder .right .mails {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+    transition: var(--tr3);
+}
+
+.main-holder .right .sing-up {
+    position: absolute;
+    top: 20px;
+    right: 90px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+    transition: var(--tr3);
+}
+
+.main-holder .right .shopping {
+    position: absolute;
+    top: 20px;
+    right: 150px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+    transition: var(--tr3);
+}
+
+.main-holder .right .sing-up:hover,
+.main-holder .right .shopping:hover,
+.main-holder .right .mails:hover {
+    color: var(--main-blue);
+}
+
+.main-holder .right .controle {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    gap: 10px;
+    color: white;
+    z-index: 10;
+}
+
+.main-holder .right .controle i {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--tr3);
+}
+
+.main-holder .right .controle i:hover {
+    color: black;
+    background-color: white;
+}
+
+.main-holder .right .number {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    z-index: 10;
+}
+
+.main-holder .right .number::before {
+    content: "/04";
+    position: absolute;
+    top: 4px;
+    right: -18px;
+    font-size: 10px;
+    color: #d3d3d3;
+    font-weight: normal;
+}
+
+.main-holder .right .holder {
+    width: 100%;
+    height: 103%;
+    position: relative;
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+}
+
+.main-holder .right .holder .slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.main-holder .right .holder .s1 {
+    background: url(../img/m5.jpg);
+    background-size: cover;
+
+}
+
+.main-holder .right .holder .s2 {
+    background: url(../img/m3.jpg);
+    background-size: cover;
+
+
+}
+
+.main-holder .right .holder .s3 {
+    background: url(../img/m2.jpg);
+    background-size: cover;
+
+}
+
+.main-holder .right .holder .s4 {
+    background: url(../img/m1.jpg);
+    background-size: cover;
+
+}
+
+/*  */
